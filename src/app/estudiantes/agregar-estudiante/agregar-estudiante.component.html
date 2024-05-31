@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="mt-4">
+        <h3>Agregar estudiante</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+        <div class="form-group mt-2">
+            <label>Codigo estudiante</label>
+            <input formControlName="codigoEstudiante" type="text" class="formcontrol" [class.isinvalid]="validateField('codigoEstudiante')"placeholder="Codigo del estudiante">
+            <div class="invalid-feedback">
+                @if(validateField('codigoEstudiante')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Nombres</label>
+            <input formControlName="nombresEstudiante" type="text" class="formcontrol" [class.is-invalid]="validateField('nombresEstudiante')" placeholder="Nombres del estudiante">
+            <div class="invalid-feedback">
+                @if(validateField('nombresEstudiante')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Apellidos</label>
+            <input formControlName="apellidosEstudiante" type="text" class="formcontrol" [class.is-invalid]="validateField('apellidosEstudiante')" placeholder="Apellidos del estudiante">
+            <div class="invalid-feedback">
+                @if(validateField('apellidosEstudiante')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Correo</label>
+            <input formControlName="correoEstudiante" type="text" class="formcontrol" [class.is-invalid]="validateField('correoEstudiante')" placeholder="Correo del estudiante">
+            <div class="invalid-feedback">
+                @if(validateField('correoEstudiante')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+            <div class="invalid-feedback">
+                @if(form.get('correoEstudiante')?.errors?.['email']){
+                    <span>Correo no valido</span>
+                }
+            </div>
+            <div class="invalid-feedback">
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit()">Confirmar informacion</button>
+        </div>
+    </form>
+</div>

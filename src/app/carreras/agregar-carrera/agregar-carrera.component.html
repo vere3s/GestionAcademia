@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="mt-4">
+        <h3>Agregar carrera</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+        <div class="form-group mt-2">
+            <label>Codigo carrera</label>
+            <input formControlName="codigoCarrera" type="text" class="formcontrol" [class.isinvalid]="validateField('codigoCarrera')"placeholder="Codigo de la carrera">
+            <div class="invalid-feedback">
+                @if(validateField('codigoCarrera')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Nombre</label>
+            <input formControlName="nombreCarrera" type="text" class="formcontrol" [class.is-invalid]="validateField('nombreCarrera')" placeholder="Nombre de la carrera">
+            <div class="invalid-feedback">
+                @if(validateField('nombreCarrera')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit()">Confirmar informacion</button>
+        </div>
+    </form>
+</div>

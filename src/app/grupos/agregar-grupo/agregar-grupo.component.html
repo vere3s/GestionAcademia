@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="mt-4">
+        <h3>Agregar grupo</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+        <div class="form-group mt-2">
+            <label>ID Carrera</label>
+            <input formControlName="idCarrera" type="text" class="formcontrol" [class.is-invalid]="validateField('idCarrera')" placeholder="ID de la carrera">
+            <div class="invalid-feedback">
+                @if(validateField('idCarrera')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>ID Materia</label>
+            <input formControlName="idMateria" type="text" class="formcontrol" [class.isinvalid]="validateField('idMateria')"placeholder="Id de la materia">
+            <div class="invalid-feedback">
+                @if(validateField('idMateria')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>ID Profesor</label>
+            <input formControlName="idProfesor" type="text" class="formcontrol" [class.is-invalid]="validateField('idProfesor')" placeholder="ID del Profesor">
+            <div class="invalid-feedback">
+                @if(validateField('idProfesor')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Ciclo</label>
+            <input formControlName="ciclo" type="text" class="formcontrol" [class.is-invalid]="validateField('ciclo')" placeholder="ciclo">
+            <div class="invalid-feedback">
+                @if(validateField('ciclo')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label>Año</label>
+            <input formControlName="anio" type="text" class="formcontrol" [class.is-invalid]="validateField('anio')" placeholder="Año">
+            <div class="invalid-feedback">
+                @if(validateField('anio')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit()">Confirmar informacion</button>
+        </div>
+    </form>
+</div>

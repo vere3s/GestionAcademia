@@ -1,7 +1,7 @@
 <div class="container">
     <div class="d-flex justify-content-between mt-4">
         <h4>Mantenimiento Grupos</h4>
-        <button class="btn btn-success">Agregar</button>
+        <button class="btn btn-success" (click) = "navigateToForm()">Agregar</button>
     </div>
     <table class="table table-bordered mt-4">
         <thead>
@@ -27,10 +27,10 @@
                 <td>
                     <!-- Podemos enviar valores a metodos en el .ts de esta
                     forma-->
-                    <button class="btn btn-primary">Actualizar</button>
+                    <button class="btn btn-primary" (click)="updateGrupo(item.idGrupo)">Actualizar</button>
                     <!-- Esta es otra forma con la que podemos enviar valores a
                     metodos en el .ts-->
-                    <button class="btn btn-danger ml-2">Eliminar</button>
+                    <button class="btn btn-danger ml-2" (click)="deleteGrupo($event)" value="{{item.idGrupo}}">Eliminar</button>
                 </td>
             </tr>
         }

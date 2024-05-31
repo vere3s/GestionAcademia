@@ -13,4 +13,28 @@ export class MateriasService {
   obtenerMaterias() {
     return this.http.get<Materia[]>(endpoints.obtenerMaterias);
   }
+      // Obtener Materia por ID
+      obtenerMateriaPorID(idMateria: number){
+        return this.http.get<Materia>(endpoints.obtenerMateriaPorID.replace(':idMateria', idMateria.toString()));
+      }
+      // Insertar Materia
+      agregarMateria(materia: Materia){
+      // Se arma el objeto a enviar
+      let body = {
+          "nombreMateria": materia.nombreMateria
+      }
+        return this.http.post<any>(endpoints.agregarMateria,body);
+      }
+      // Eliminar un Materia
+      eliminarMateria(idMateria: number){
+        return this.http.delete<any>(endpoints.eliminarMateria.replace(':idMateria',idMateria.toString()));
+      }
+      // Actualizar Materia
+    actualizarMateria(idMateria: number, materia: Materia){
+      // Se arma el objeto a enviar
+      let body = {
+        "nombreMateria": materia.nombreMateria
+      }
+        return this.http.patch<number>(endpoints.actualizarMateria.replace(':idMateria',idMateria.toString()), body);
+        }
 }

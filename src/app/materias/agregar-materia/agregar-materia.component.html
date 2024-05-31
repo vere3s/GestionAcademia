@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="mt-4">
+        <h3>Agregar materia</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+        <div class="form-group mt-2">
+            <label>Nombre de materia</label>
+            <input formControlName="nombreMateria" type="text" class="formcontrol" [class.isinvalid]="validateField('nombreMateria')"placeholder="Nombre de la materia">
+            <div class="invalid-feedback">
+                @if(validateField('nombreMateria')){
+                    <span>Este campo es requerido</span>
+                }
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit()">Confirmar informacion</button>
+        </div>
+    </form>
+</div>
