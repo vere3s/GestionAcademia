@@ -44,6 +44,6 @@ actualizarGrupo(idGrupo: number, grupo: Grupo){
     "ciclo": grupo.ciclo,
     "anio": grupo.anio
   }
-    return this.http.patch<number>(endpoints.actualizarGrupo.replace(':idGrupo',idGrupo.toString()), body);
+    return this.http.put<number>(endpoints.actualizarGrupo.replace(':idGrupo',idGrupo.toString()), body);
     }
 }

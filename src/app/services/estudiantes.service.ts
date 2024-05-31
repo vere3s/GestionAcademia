@@ -44,7 +44,7 @@ actualizarEstudiante(idEstudiante: number, estudiante: Estudiante){
       "codigoEstudiante": estudiante.codigoEstudiante,
       "correoEstudiante": estudiante.correoEstudiante
   }
-    return this.http.patch<number>(endpoints.actualizarEstudiante.replace(':idEstudiante',idEstudiante.toString()), body);
+    return this.http.put<number>(endpoints.actualizarEstudiante.replace(':idEstudiante',idEstudiante.toString()), body);
     }
   }
   

@@ -39,6 +39,6 @@ export class ProfesoresService {
           "apellidosProfesor": profesor.apellidosProfesor,
           "email": profesor.email
       }
-        return this.http.patch<number>(endpoints.actualizarProfesor.replace(':idProfesor',idProfesor.toString()), body);
+        return this.http.put<number>(endpoints.actualizarProfesor.replace(':idProfesor',idProfesor.toString()), body);
         }
 }

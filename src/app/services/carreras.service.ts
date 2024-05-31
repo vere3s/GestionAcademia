@@ -37,6 +37,6 @@ export class CarrerasService {
       "codigoCarrera": carrera.codigoCarrera,
       "nombreCarrera": carrera.nombreCarrera
     }
-      return this.http.patch<number>(endpoints.actualizarCarrera.replace(':idCarrera',idCarrera.toString()), body);
+      return this.http.put<number>(endpoints.actualizarCarrera.replace(':idCarrera',idCarrera.toString()), body);
       }
 }

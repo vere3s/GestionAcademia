@@ -52,7 +52,7 @@ constructor() {
             next: (temp) => {
             this.formMateria = temp;
             // Se rellena la informacion del formulario
-            this.form.controls['nombreMateria'].setValue(this.formMateria.idMateria);
+            this.form.controls['nombreMateria'].setValue(this.formMateria.nombreMateria);
           },
             error: (err) => {
             console.log("Error: ", err);

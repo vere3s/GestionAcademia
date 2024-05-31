@@ -35,6 +35,6 @@ export class MateriasService {
       let body = {
         "nombreMateria": materia.nombreMateria
       }
-        return this.http.patch<number>(endpoints.actualizarMateria.replace(':idMateria',idMateria.toString()), body);
+        return this.http.put<number>(endpoints.actualizarMateria.replace(':idMateria',idMateria.toString()), body);
         }
 }
